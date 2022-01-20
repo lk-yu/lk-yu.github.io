@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>JS小知识点(2) | 小王和你拼啦!</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="JS" />
+    
+    <meta name="description" content="1.Array.prototype.includes()includes()方法用来判断一个数组中是否包含某个指定的值,包含则返回true,否则返回false 语法 1arr.includes(findVal[,index])  index可选,表示从index索引处开始往后查找.如果为负值,表示从末尾开始往前跳|index|个索引,然后往后查找.默认值为0. 123456let arr &#x3D; [&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS小知识点(2)">
+<meta property="og:url" content="https://lk-yu.github.io/js%E7%9F%A5%E8%AF%86%E7%82%B9(2)/index.html">
+<meta property="og:site_name" content="小王和你拼啦!">
+<meta property="og:description" content="1.Array.prototype.includes()includes()方法用来判断一个数组中是否包含某个指定的值,包含则返回true,否则返回false 语法 1arr.includes(findVal[,index])  index可选,表示从index索引处开始往后查找.如果为负值,表示从末尾开始往前跳|index|个索引,然后往后查找.默认值为0. 123456let arr &#x3D; [&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lk-yu.github.io/css/images/js.jfif">
+<meta property="article:published_time" content="2022-01-11T01:12:00.000Z">
+<meta property="article:modified_time" content="2022-01-11T03:30:23.045Z">
+<meta property="article:author" content="xiao wang">
+<meta property="article:tag" content="JS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lk-yu.github.io/css/images/js.jfif">
+    
+
+    
+        <link rel="alternate" href="/" title="小王和你拼啦!" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/">Blog</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JS/">JS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E5%AE%A3%E5%AF%BC/">宣导</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/JS/">JS</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-js知识点(2)" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        JS小知识点(2)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/js%E7%9F%A5%E8%AF%86%E7%82%B9(2)/" class="article-date">
+       <time datetime="2022-01-11T01:12:00.000Z" itemprop="datePublished">2022-01-11</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/js%E7%9F%A5%E8%AF%86%E7%82%B9(2)/" class="article-date">
+     <time datetime="2022-01-11T03:30:23.045Z" itemprop="dateModified">2022-01-11</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/JS/" rel="tag">JS</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h3 id="1-Array-prototype-includes"><a href="#1-Array-prototype-includes" class="headerlink" title="1.Array.prototype.includes()"></a>1.Array.prototype.includes()</h3><p>includes()方法用来判断一个数组中是否包含某个指定的值,包含则返回true,否则返回false</p>
+<p>语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.includes(findVal[,index])</span><br></pre></td></tr></table></figure>
+
+<p>index可选,表示从index索引处开始往后查找.如果为负值,表示从末尾开始往前跳|index|个索引,然后往后查找.默认值为0.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;leo&#x27;</span>,<span class="string">&#x27;lion&#x27;</span>,<span class="string">&#x27;ggj&#x27;</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.includes(<span class="string">&#x27;leo&#x27;</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.includes(<span class="string">&#x27;gao&#x27;</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.includes(<span class="string">&#x27;ggj&#x27;</span>,<span class="number">1</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.includes(<span class="string">&#x27;Leo&#x27;</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="comment">// 注意: 使用includes()查找字符串是区分大小写的.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-幂运算符"><a href="#2-幂运算符" class="headerlink" title="2.幂运算符 **"></a>2.幂运算符 **</h3><p>求某个数的幂,之前一般使用Math.pow()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">10</span>)); <span class="comment">// 1024</span></span><br></pre></td></tr></table></figure>
+
+<p>使用幂运算符**</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span> ** <span class="number">10</span>); <span class="comment">// 1024</span></span><br><span class="line"><span class="comment">// 注意: 幂运算符的两个*号之间不能出现空格,否则语法会报错.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Object-values"><a href="#3-Object-values" class="headerlink" title="3.Object.values()"></a>3.Object.values()</h3><p>Object.values()返回一个新数组,里面的成员是传入的参数对象自身的(不含继承的)所有可遍历属性对应的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;leo&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">18</span>,</span><br><span class="line">    <span class="attr">like</span>:<span class="string">&#x27;music&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.values(obj)); <span class="comment">// [&#x27;leo&#x27;,18,&#x27;music&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Object-entries"><a href="#4-Object-entries" class="headerlink" title="4.Object.entries()"></a>4.Object.entries()</h3><p>Object.entries()方法返回一个新数组,里面的成员是传入的参数对象本身的(不含继承的)所有可遍历属性的键值对数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;leo&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">18</span>,</span><br><span class="line">    <span class="attr">like</span>:<span class="string">&#x27;music&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.entries(obj)); <span class="comment">// [[&#x27;name&#x27;,&#x27;leo&#x27;],[&#x27;age&#x27;,18],[&#x27;like&#x27;,&#x27;music&#x27;]]</span></span><br></pre></td></tr></table></figure>
+
+<p>扩展:Object.keys()方法返回一个新数组,里面的成员是传入的参数对象本身的(不含继承的)所有可遍历的属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;leo&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">18</span>,</span><br><span class="line">    <span class="attr">like</span>:<span class="string">&#x27;music&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj)); <span class="comment">// [&#x27;name&#x27;,&#x27;age&#x27;,&#x27;like&#x27;]</span></span><br><span class="line"><span class="comment">// 注意: 如果传入的参数是数组,则返回的是所有可遍历的索引.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-Object-getOwnPropertyDescriptpors"><a href="#5-Object-getOwnPropertyDescriptpors" class="headerlink" title="5.Object.getOwnPropertyDescriptpors()"></a>5.Object.getOwnPropertyDescriptpors()</h3><p>Object.getOwnPropertyDescriptors()方法用来获取传入对象的所有自身属性的描述符</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;leo&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">18</span>,</span><br><span class="line">    <span class="attr">like</span>:<span class="string">&#x27;music&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> desc = <span class="built_in">Object</span>.getOwnPropertyDescriptors(obj);</span><br><span class="line"><span class="built_in">console</span>.log(desc);</span><br><span class="line"><span class="comment">// 打印结果</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">name</span>:&#123;</span><br><span class="line">        <span class="attr">value</span>:<span class="string">&#x27;leo&#x27;</span>, <span class="comment">// value表示当前对象的默认值</span></span><br><span class="line">        <span class="attr">writable</span>:<span class="literal">true</span>, <span class="comment">// writable表示对象属性是否可以修改</span></span><br><span class="line">        <span class="attr">enumerable</span>:<span class="literal">true</span>, <span class="comment">// enumerable表示当前这个属性是否可以出现在对象的枚举属性中</span></span><br><span class="line">        <span class="attr">configurable</span>:<span class="literal">true</span> <span class="comment">// 表示当前对象的属性能否用delete删除</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">age</span>:&#123;</span><br><span class="line">        <span class="attr">value</span>:<span class="number">18</span>,</span><br><span class="line">        <span class="attr">writable</span>:<span class="literal">true</span>,</span><br><span class="line">        <span class="attr">enumerable</span>:<span class="literal">true</span>,</span><br><span class="line">        <span class="attr">configurable</span>:<span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">like</span>:&#123;</span><br><span class="line">        <span class="attr">value</span>:<span class="string">&#x27;music&#x27;</span>,</span><br><span class="line">        <span class="attr">writable</span>:<span class="literal">true</span>,</span><br><span class="line">        <span class="attr">enumerable</span>:<span class="literal">true</span>,</span><br><span class="line">        <span class="attr">configurable</span>:<span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以使用Object.defineProperty()修改属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj,<span class="string">&quot;name&quot;</span>,&#123;</span><br><span class="line">    <span class="attr">value</span>:<span class="string">&#x27;leo&#x27;</span>,</span><br><span class="line">    <span class="attr">writable</span>:<span class="literal">false</span>, <span class="comment">// 设置为false,该属性无法修改</span></span><br><span class="line">    <span class="attr">configurable</span>:<span class="literal">false</span>, <span class="comment">// 设置为false,该属性不支持delete删除</span></span><br><span class="line">    <span class="attr">enumerable</span>:<span class="literal">false</span>, <span class="comment">// 设置为false,该属性不可被枚举</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>验证</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name:&#x27;leo&#x27;&#125;</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">&#x27;lion&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name:&#x27;leo&#x27;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> obj.name</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name:&#x27;leo&#x27;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key); <span class="comment">// &quot;&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-String-prototype-padStart"><a href="#6-String-prototype-padStart" class="headerlink" title="6.String.prototype.padStart"></a>6.String.prototype.padStart</h3><p>把指定字符串填充到字符串头部,返回新字符串.</p>
+<p>语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.padStart(targetLength [,padString])</span><br></pre></td></tr></table></figure>
+
+<p>targetLength: 当前字符串需要填充到的目标长度.如果这个数值小于当前字符串的长度,则返回当前字符串本身.</p>
+<p>padString: 可选,如果字符串太长,使填充后的字符串长度超过了目标长度,则只保留最左侧的部分,其他部分会被截断.默认值为” “.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;abc&#x27;</span>.padStart(<span class="number">10</span>); <span class="comment">// &quot;       abc&quot;,填充默认值&quot;&quot;</span></span><br><span class="line"><span class="string">&#x27;abc&#x27;</span>.padStart(<span class="number">10</span>, <span class="string">&#x27;*&#x27;</span>); <span class="comment">// &quot;*******abc&quot;</span></span><br><span class="line"><span class="string">&#x27;abc&#x27;</span>.padStart(<span class="number">6</span>,<span class="string">&#x27;123465&#x27;</span>); <span class="comment">// &quot;123abc&quot;</span></span><br><span class="line"><span class="string">&#x27;abc&#x27;</span>.padStart(<span class="number">1</span>); <span class="comment">// &quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>举例</p>
+<p>日期格式化: yyyy-mm-dd的格式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">let</span> year = date.getFullYear();</span><br><span class="line"><span class="comment">// 月日如果是一位前面给它填充一个0</span></span><br><span class="line"><span class="keyword">let</span> month = (date.getMonth() + <span class="number">1</span>).toString().padStart(<span class="number">2</span>,<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> day = (date.getDate()).toString().padStart(<span class="number">2</span>,<span class="string">&#x27;0&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;year&#125;</span>-<span class="subst">$&#123;month&#125;</span>-<span class="subst">$&#123;day&#125;</span>`</span>); <span class="comment">// 2022-01-09</span></span><br></pre></td></tr></table></figure>
+
+<p>数字替换(手机号,银行卡号等)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tel = <span class="string">&#x27;18937640746&#x27;</span></span><br><span class="line"><span class="keyword">let</span> newTel = tel.slice(-<span class="number">4</span>).padStart(tel.length,<span class="string">&#x27;*&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(newTel) <span class="comment">// *******0746</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-String-prototype-padEnd"><a href="#7-String-prototype-padEnd" class="headerlink" title="7.String.prototype.padEnd"></a>7.String.prototype.padEnd</h3><p>把指定字符串填充到字符串尾部,返回新字符串.</p>
+<p>语法与padStart相同</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;abc&#x27;</span>.padEnd(<span class="number">10</span>); <span class="comment">// &quot;abc       &quot;,填充默认值&quot;&quot;</span></span><br><span class="line"><span class="string">&#x27;abc&#x27;</span>.padEnd(<span class="number">10</span>,<span class="string">&quot;*&quot;</span>); <span class="comment">// &quot;abc*******&quot;</span></span><br><span class="line"><span class="string">&#x27;abc&#x27;</span>.padEnd(<span class="number">6</span>,<span class="string">&quot;123456&quot;</span>); <span class="comment">// &quot;abc123&quot;</span></span><br><span class="line"><span class="string">&#x27;abc&#x27;</span>.padEnd(<span class="number">1</span>); <span class="comment">// &quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-async-await"><a href="#8-async-await" class="headerlink" title="8.async/await"></a>8.async/await</h3><p>前面添加了async的函数在执行后都会自动返回一个Promise对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;leo&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">// &#x27;leo&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>添加async后</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;leo&#x27;</span>; <span class="comment">// Promise.resolve(&#x27;leo&#x27;)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fn()); <span class="comment">// Promise对象</span></span><br></pre></td></tr></table></figure>
+
+<p>async函数中使用await,那么await处的代码就会变成同步的,即只有等await后面的Promise执行完成得到结果才会继续往下执行,await意为等待</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">            resolve();</span><br><span class="line">        &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">await</span> timeout(); <span class="comment">// 执行完成才继续往下执行</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn(); <span class="comment">// 不加async和await是 2,1  加了是 1,2</span></span><br></pre></td></tr></table></figure>
+
+<p>注意:</p>
+<p>1.await只能在 async标记的函数内部使用,单独使用会触发Syntax error;</p>
+<p>2.await后面需要跟异步操作,不然就没有意义,而且await后面的Promise对象不必写then,因为await的作用之一就是获取后面Promise对象成功状态传递出来的参数.</p>
+<h3 id="9-Rest-amp-Spread"><a href="#9-Rest-amp-Spread" class="headerlink" title="9.Rest &amp; Spread"></a>9.Rest &amp; Spread</h3><p>spread例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = &#123;</span><br><span class="line">    <span class="attr">a</span>:<span class="number">1</span>,</span><br><span class="line">    <span class="attr">b</span>:<span class="number">2</span>,</span><br><span class="line">    <span class="attr">c</span>:<span class="number">3</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> newText = &#123;</span><br><span class="line">    ...text,</span><br><span class="line">    <span class="attr">c</span>:<span class="number">4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(newText); <span class="comment">// &#123;a:1, b:2, c:4&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这块代码展示了spread语法,可以把text对象的数据拓展到newText对象,这个功能很实用.需要注意的是,<strong>如果存在相同的属性名,后面的会把前面的覆盖</strong>.</p>
+<p>如果属性的值是一个对象的话,该对象的引用会被拷贝,而不是生成一个新的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;<span class="attr">x</span>: &#123;<span class="attr">y</span>: <span class="number">10</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">let</span> copy1 = &#123; ...obj &#125;;</span><br><span class="line"><span class="keyword">let</span> copy2 = &#123; ...obj &#125;;</span><br><span class="line">obj.x.y = <span class="string">&#x27;leo&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(copy1,copy2); <span class="comment">// &#123;x: &#123;y: &#x27;leo&#x27;&#125;&#125; &#123;x: &#123;y: &#x27;leo&#x27;&#125;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(copy1.x === copy2.x) <span class="comment">// true, x为同一个引用</span></span><br></pre></td></tr></table></figure>
+
+<p>rest例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = &#123;</span><br><span class="line">    <span class="attr">a</span>:<span class="number">1</span>,</span><br><span class="line">    <span class="attr">b</span>:<span class="number">2</span>,</span><br><span class="line">    <span class="attr">c</span>:<span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123;a,...rest&#125; = text</span><br><span class="line"><span class="built_in">console</span>.log(a,rest); <span class="comment">// 1 &#123;b: 2,c: 3&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>当对象key-value不确定的时候,把必选的key赋值给变量,用一个变量接收其他可选的key数据,这在之前是做不到的.注意,<strong>rest属性必须始终出现在对象末尾</strong>,否则将抛出错误.</p>
+<h3 id="10-for-await-of"><a href="#10-for-await-of" class="headerlink" title="10.for await of"></a>10.for await of</h3><p>异步迭代器(for-await-of): 循环等待每个Promise对象变为resolved状态才进入下一步.</p>
+<p>for…of是同步运行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Timeout</span>(<span class="params">time</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            resolve(time);</span><br><span class="line">        &#125;,time);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> arr = [TimeOut(<span class="number">2000</span>)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://lk-yu.github.io/js%E7%9F%A5%E8%AF%86%E7%82%B9(2)/" data-id="ckymm77he0006d8udc76dcmu7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "xiao wang"
+        },
+        "headline": "JS小知识点(2)",
+        "image": "https://lk-yu.github.iohttps://lk-yu.github.io/css/images/js.jfif",
+        "keywords": "JS",
+        "genre": "JS",
+        "datePublished": "2022-01-11",
+        "dateCreated": "2022-01-11",
+        "dateModified": "2022-01-11",
+        "url": "https://lk-yu.github.io/js知识点(2)/",
+        "description": "1.Array.prototype.includes()includes()方法用来判断一个数组中是否包含某个指定的值,包含则返回true,否则返回false
+语法
+1arr.includes(findVal[,index])
+
+index可选,表示从index索引处开始往后查找.如果为负值,表示从末尾开始往前跳|index|个索引,然后往后查找.默认值为0.
+123456let arr = [&",
+        "wordCount": 1268
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/%E6%8F%90%E9%AB%98%E6%91%B8%E9%B1%BC%E6%8A%80%E5%B7%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            提高摸鱼技巧
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/xshell%E5%B8%B8%E7%94%A8%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">xshell常用命令</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/%E6%8F%90%E9%AB%98%E6%91%B8%E9%B1%BC%E6%8A%80%E5%B7%A7/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/%E6%8F%90%E9%AB%98%E6%91%B8%E9%B1%BC%E6%8A%80%E5%B7%A7/" class="title">提高摸鱼技巧</a></p>
+                            <p class="item-date"><time datetime="2022-01-20T06:50:00.000Z" itemprop="datePublished">2022-01-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/js%E7%9F%A5%E8%AF%86%E7%82%B9(2)/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lk-yu.github.io/css/images/js.jfif)" alt="JS小知识点(2)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/js%E7%9F%A5%E8%AF%86%E7%82%B9(2)/" class="title">JS小知识点(2)</a></p>
+                            <p class="item-date"><time datetime="2022-01-11T01:12:00.000Z" itemprop="datePublished">2022-01-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/xshell%E5%B8%B8%E7%94%A8%E9%97%AE%E9%A2%98/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lk-yu.github.io/css/images/xshell.jfif)" alt="xshell常用命令" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/xshell%E5%B8%B8%E7%94%A8%E9%97%AE%E9%A2%98/" class="title">xshell常用命令</a></p>
+                            <p class="item-date"><time datetime="2022-01-10T02:22:00.000Z" itemprop="datePublished">2022-01-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/js%E7%9F%A5%E8%AF%86%E7%82%B9(1)/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lk-yu.github.io/css/images/js.jfif)" alt="JS小知识点(1)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JS/">JS</a></p>
+                            <p class="item-title"><a href="/js%E7%9F%A5%E8%AF%86%E7%82%B9(1)/" class="title">JS小知识点(1)</a></p>
+                            <p class="item-date"><time datetime="2022-01-07T09:05:41.000Z" itemprop="datePublished">2022-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/hexo%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://lk-yu.github.io/css/images/hexo.jfif)" alt="hexo搭建第一部分" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a></p>
+                            <p class="item-title"><a href="/hexo%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86/" class="title">hexo搭建第一部分</a></p>
+                            <p class="item-date"><time datetime="2022-01-07T02:42:41.000Z" itemprop="datePublished">2022-01-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%A3%E5%AF%BC/">宣导</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xshell/" rel="tag">xshell</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/xshell/" style="font-size: 10px;">xshell</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 xiao wang</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://lk-yu.github.io/js%E7%9F%A5%E8%AF%86%E7%82%B9(2)/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
